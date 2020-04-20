@@ -1,4 +1,4 @@
-package bean;
+package task1.bean;
 
 public class Employee {
     private String name;

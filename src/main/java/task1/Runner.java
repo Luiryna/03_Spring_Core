@@ -1,11 +1,13 @@
-import bean.Employee;
-import bean.Position;
-import bean.Salary;
+package task1;
+
+import task1.bean.Employee;
+import task1.bean.Position;
+import task1.bean.Salary;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import service.EmployeeService;
-import service.PositionService;
-import service.SalaryService;
+import task1.service.EmployeeService;
+import task1.service.PositionService;
+import task1.service.SalaryService;
 
 public class Runner {
     public static void main(String[] args) {
@@ -27,7 +29,7 @@ public class Runner {
         Employee employee2 = (Employee) applicationContext.getBean("employee2");
         Employee employee3 = (Employee) applicationContext.getBean("employee3");
 
-        
+
 
     }
 }

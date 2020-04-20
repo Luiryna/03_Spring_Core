@@ -1,13 +1,15 @@
-package service;
+package task1.service;
 
-import bean.Position;
+import task1.bean.Position;
+
+import java.util.HashSet;
 import java.util.Set;
 
 public class PositionService {
-    private Set<Position> positions;
+    private Set<Position> positions = new HashSet<>();
 
-    public void create(String name) {
-        positions.add(new Position(name));
+    public void create(Position position) {
+        positions.add(position);
     }
 
     public Position read(String name) {
@@ -37,4 +39,10 @@ public class PositionService {
         this.positions = positions;
     }
 
+    @Override
+    public String toString() {
+        return "PositionService{" +
+                "positions=" + positions +
+                '}';
+    }
 }

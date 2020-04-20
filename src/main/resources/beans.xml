@@ -9,53 +9,53 @@
            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 
-    <!-- bean definitions here -->
+    <!-- task1.bean definitions here -->
     <context:annotation-config/>
 
-    <bean id="employeeService" class="service.EmployeeService"/>
-    <bean id="positionService" class="service.PositionService"/>
-    <bean id="salaryService" class="service.SalaryService"/>
+    <bean id="employeeService" class="task1.service.EmployeeService"/>
+    <bean id="positionService" class="task1.service.PositionService"/>
+    <bean id="salaryService" class="task1.service.SalaryService"/>
 
-    <bean id="salary1" class="bean.Salary">
+    <bean id="salary1" class="task1.bean.Salary">
         <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
     </bean>
 
-    <bean id="salary2" class="bean.Salary">
+    <bean id="salary2" class="task1.bean.Salary">
         <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
     </bean>
 
-    <bean id="salary3" class="bean.Salary">
+    <bean id="salary3" class="task1.bean.Salary">
         <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
     </bean>
 
-    <bean id="tester" class="bean.Position" autowire="byType">
+    <bean id="tester" class="task1.bean.Position" autowire="byType">
         <property name="name" value="Tester"/>
         <property name="salary" ref="salary1"/>
     </bean>
 
-    <bean id="developer" class="bean.Position" autowire="byType">
+    <bean id="developer" class="task1.bean.Position" autowire="byType">
         <property name="name" value="Developer"/>
         <property name="salary" ref="salary2"/>
     </bean>
 
-    <bean id="analyst" class="bean.Position" autowire="byType">
+    <bean id="analyst" class="task1.bean.Position" autowire="byType">
         <property name="name" value="Analyst"/>
         <property name="salary" ref="salary3"/>
     </bean>
 
-    <bean id="employee1" class="bean.Employee" autowire="byType">
+    <bean id="employee1" class="task1.bean.Employee" autowire="byType">
         <property name="name" value="Hanna"/>
         <property name="position" ref="developer"/>
     </bean>
 
-    <bean id="employee2" class="bean.Employee">
+    <bean id="employee2" class="task1.bean.Employee">
         <constructor-arg type="java.lang.String" value="Mark"/>
-        <constructor-arg type="bean.Position" ref="developer"/>
+        <constructor-arg type="task1.bean.Position" ref="developer"/>
     </bean>
 
-    <bean id="employee3" class="bean.Employee">
+    <bean id="employee3" class="task1.bean.Employee">
         <constructor-arg type="java.lang.String" value="Katya"/>
-        <constructor-arg type="bean.Position" ref="analyst"/>
+        <constructor-arg type="task1.bean.Position" ref="analyst"/>
     </bean>
 
 </beans>

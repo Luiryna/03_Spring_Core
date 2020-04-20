@@ -1,4 +1,4 @@
-package bean;
+package task1.bean;
 
 public class Position {
     private String name;

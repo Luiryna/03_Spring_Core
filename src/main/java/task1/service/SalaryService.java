@@ -1,6 +1,6 @@
-package service;
+package task1.service;
 
-import bean.Salary;
+import task1.bean.Salary;
 
 public class SalaryService {
     public void bindSalary(Salary salary, double percent) {
