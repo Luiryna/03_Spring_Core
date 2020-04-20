@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+    <!-- bean definitions here -->
+    <context:annotation-config/>
+
+    <bean id="employeeService" class="service.EmployeeService"/>
+    <bean id="positionService" class="service.PositionService"/>
+    <bean id="salaryService" class="service.SalaryService"/>
+
+    <bean id="salary1" class="bean.Salary">
+        <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
+    </bean>
+
+    <bean id="salary2" class="bean.Salary">
+        <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
+    </bean>
+
+    <bean id="salary3" class="bean.Salary">
+        <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
+    </bean>
+
+    <bean id="tester" class="bean.Position" autowire="byType">
+        <property name="name" value="Tester"/>
+        <property name="salary" ref="salary1"/>
+    </bean>
+
+    <bean id="developer" class="bean.Position" autowire="byType">
+        <property name="name" value="Developer"/>
+        <property name="salary" ref="salary2"/>
+    </bean>
+
+    <bean id="analyst" class="bean.Position" autowire="byType">
+        <property name="name" value="Analyst"/>
+        <property name="salary" ref="salary3"/>
+    </bean>
+
+    <bean id="employee1" class="bean.Employee" autowire="byType">
+        <property name="name" value="Hanna"/>
+        <property name="position" ref="developer"/>
+    </bean>
+
+    <bean id="employee2" class="bean.Employee">
+        <constructor-arg type="java.lang.String" value="Mark"/>
+        <constructor-arg type="bean.Position" ref="developer"/>
+    </bean>
+
+    <bean id="employee3" class="bean.Employee">
+        <constructor-arg type="java.lang.String" value="Katya"/>
+        <constructor-arg type="bean.Position" ref="analyst"/>
+    </bean>
+
+</beans>
