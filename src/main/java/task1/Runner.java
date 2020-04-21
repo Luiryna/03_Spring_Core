@@ -29,6 +29,8 @@ public class Runner {
         Employee employee2 = (Employee) applicationContext.getBean("employee2");
         Employee employee3 = (Employee) applicationContext.getBean("employee3");
 
+        System.out.println(employee1.toString());
+
 
 
     }

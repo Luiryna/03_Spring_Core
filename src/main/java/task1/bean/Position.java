@@ -1,7 +1,11 @@
 package task1.bean;
 
+import javax.validation.constraints.NotNull;
+
 public class Position {
+    @NotNull
     private String name;
+    @NotNull
     private Salary salary;
 
     public Position() {

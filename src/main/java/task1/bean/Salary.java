@@ -1,6 +1,11 @@
 package task1.bean;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class Salary {
+    @NotNull
+    @Min(value = 50, message = "Crisis, you know")
     private double amount;
 
     public Salary() {
