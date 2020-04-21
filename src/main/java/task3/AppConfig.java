@@ -2,12 +2,12 @@ package task3;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import task1.bean.Employee;
-import task1.bean.Position;
-import task1.bean.Salary;
-import task1.service.EmployeeService;
-import task1.service.PositionService;
-import task1.service.SalaryService;
+import task3.bean.Employee;
+import task3.bean.Position;
+import task3.bean.Salary;
+import task3.service.EmployeeService;
+import task3.service.PositionService;
+import task3.service.SalaryService;
 
 @Configuration
 public class AppConfig {
