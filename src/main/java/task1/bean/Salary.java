@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 
 public class Salary {
     @NotNull
-    @Min(value = 50, message = "Crisis, you know")
+    @Min(value = 150, message = "Crisis, you know")
     private double amount;
 
     public Salary() {

@@ -27,4 +27,10 @@ public class EmployeeService {
         employees.remove(employee);
     }
 
+    @Override
+    public String toString() {
+        return "EmployeeService{" +
+                "employees=" + employees +
+                '}';
+    }
 }
