@@ -25,22 +25,22 @@
         <constructor-arg type="double" value="#{T(java.lang.Math).random() * 1000.0 }"/>
     </bean>
 
-    <bean id="tester" class="task1.bean.Position" autowire="byType">
-        <property name="name" value="Tester"/>
-        <property name="salary" ref="salary1"/>
+    <bean id="tester" class="task1.bean.Position">
+        <constructor-arg type="java.lang.String" value="Tester"/>
+        <constructor-arg type="task1.bean.Salary" ref="salary1"/>
     </bean>
 
-    <bean id="developer" class="task1.bean.Position" autowire="byType">
-        <property name="name" value="Developer"/>
-        <property name="salary" ref="salary2"/>
+    <bean id="developer" class="task1.bean.Position">
+        <constructor-arg type="java.lang.String" value="Developer"/>
+        <constructor-arg type="task1.bean.Salary" ref="salary2"/>
     </bean>
 
-    <bean id="analyst" class="task1.bean.Position" autowire="byType">
-        <property name="name" value="Analyst"/>
-        <property name="salary" ref="salary3"/>
+    <bean id="analyst" class="task1.bean.Position">
+        <constructor-arg type="java.lang.String" value="Analyst"/>
+        <constructor-arg type="task1.bean.Salary" ref="salary3"/>
     </bean>
 
-    <bean id="employee1" class="task1.bean.Employee" autowire="byType">
+    <bean id="employee1" class="task1.bean.Employee">
         <property name="name" value="Hanna"/>
         <property name="position" ref="developer"/>
     </bean>
